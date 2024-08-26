@@ -2,14 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+    transition: 400ms;
+    ::selection{
+        background-color: var(--color-secondary);
+        color: var(--color-white);
+    }
+}
 :root{
     --color-text:#160C28;
     --color-error:#DD1155;
     --color-warning:#FFEE88;
     --color-success:#04E762;
     --color-default:#00A7E1;
-    --color-bg-paper:#E5E5E5;
-    --color-primary:#19647E;
+    --color-bg-paper:#F1F1F1;
+    --color-primary:#4EFFEF;
     --color-secondary:#F45B69;
+    --color-secondary-light:#F9808C;
     --color-white:#FFFFFF; 
 }

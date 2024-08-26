@@ -16,6 +16,7 @@ const config: Config = {
         success:'var(--color-success)',
         default:'var(--color-default)',
         'primary-contrast': 'var(--color-primary-contrast)',
+        'secondary-light': 'var(--color-secondary-light)',
       }
     },
   },
