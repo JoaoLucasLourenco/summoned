@@ -90,16 +90,20 @@ export default function Login(){
                 onChange={(e)=>atualStep.setState(e.target.value)}
                 />
 
-
-                <button
-                type="button"
-                className="
-                button-singUp-back
-                "
-                onClick={()=>{anterior();}}
-                >
-                    Voltar  
-                </button>
+                {
+                    indice?
+                    <button
+                    type="button"
+                    className="
+                    button-singUp-back
+                    "
+                    onClick={()=>{anterior();}}
+                    >
+                        Voltar  
+                    </button>:
+                    <>  </>
+                }
+                
                 
                 <button
                 type="button"
@@ -118,8 +122,7 @@ export default function Login(){
             my-10
             "
             >
-                Já tem tem conta? 
-                
+                Já tem tem conta?
                 <button 
                 onClick={()=>router.push('/login')}
                 className="

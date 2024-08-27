@@ -68,6 +68,8 @@
     text-white
     float-right
     bg-secondary
+    border
+    border-secondary
     hover:bg-secondary-light
     hover:shadow-md
 }
