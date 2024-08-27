@@ -1,7 +1,5 @@
 'use client';
 import { useState } from "react";
-import { Bounce, ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
 
 
@@ -9,41 +7,62 @@ export default function Login(){
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [nome, setNome] = useState('');
-    const [singPage, setSingPage] = useState('Nome');
+    const [indice, setIndice] = useState(0);
+    const pagination = [
+        {
+            id : 1,
+            name:'name',
+            nome : 'Nome',
+            placeholder: 'Digite seu nome aqui',
+            tipo:'text',
+            value:nome,
+            setState:setNome
+        },
+        {
+            id : 2,
+            name:'email',
+            nome : 'Email',
+            placeholder: 'Digite seu email aqui',
+            tipo:'email',
+            value:email,
+            setState:setEmail
+        },
+        {
+            id : 3,
+            name:'senha',
+            nome : 'Senha',
+            placeholder: 'Digite sua senha aqui',
+            tipo:'password',
+            value:senha,
+            setState:setSenha
+        },
+    ];
+
+    const proximo = () =>{
+        if(indice<pagination.length-1){;
+            setIndice(indice+1);
+        }
+    };
+
+    const anterior = () =>{
+        if(indice>0){
+            setIndice(indice-1);
+        }
+    };
+    const atualStep = pagination[indice];
     const router = useRouter();
 
 
 
-    const handleNext = () =>{
-        switch(singPage){
-            case 'Nome':
-                nome!= 'Joj'?
-                toast.error("Nome inválido!"):
-                setSingPage('Email');
-                break;
-            case 'Email':
-                setSingPage('Senha');
-                break;
-            case 'Senha':
-                setSingPage('Nome');
-                break;
-        }
-    };
+
+    
     return(
         <main className="
-        flex
-        min-h-screen
-        flex-col 
-        items-center 
-        justify-between 
-        py-24
+        main-singInUp
         ">
         
         <div className="
-        flex
-        flex-col
-        lg:w-1/3
-        w-10/12
+        div-singInUp
         ">
 
             <h1 className="
@@ -51,53 +70,47 @@ export default function Login(){
             text-center
             text-xl
             ">
-                Cadastro {nome}
+                Cadastro
             </h1>
             
             <form action="" className="
 
             ">
-                <label htmlFor="name">{singPage}: </label>
-
-                <input type="text"
-                id="name"
+                
+                
+                <label htmlFor={atualStep.name}>{atualStep.nome}: </label>
+                <input
                 className="
-                w-full
-                rounded-lg
-                p-2
-                text-text
-                border
-                my-4
+                textInput-singInUp
                 "
-                value={singPage=='Nome'?nome:singPage=='senha?'?senha:email}
-                placeholder={`Digite o ${singPage!='Senha'?'seu':'sua'} ${singPage.toLowerCase()} aqui`}
-                onChange={(e)=>{
-                    singPage=='Nome'?setNome(e.target.value):
-                    singPage=='senha?'?setSenha(e.target.value):
-                    setEmail(e.target.value);
-                }}
+                type={atualStep.tipo}
+                id={atualStep.name}
+                value={atualStep.value}
+                placeholder={atualStep.placeholder}
+                onChange={(e)=>atualStep.setState(e.target.value)}
                 />
 
 
-
+                <button
+                type="button"
+                className="
+                button-singUp-back
+                "
+                onClick={()=>{anterior();}}
+                >
+                    Voltar  
+                </button>
                 
                 <button
                 type="button"
                 className="
-                bg-secondary
-                w-full
-                p-2
-                rounded-md
-                text-white
-                text-lg
-                mt-6
-                hover:bg-secondary-light
-                hover:shadow-md
+                button-singUp-next
                 "
-                onClick={()=>{handleNext();}}
+                onClick={()=>{proximo();}}
                 >
-                    Próximo
+                    Avançar
                 </button>
+
             </form>
             <p
             className="
@@ -119,20 +132,6 @@ export default function Login(){
                 </button>
             </p>
         </div>
-        <ToastContainer
-        stacked
-        position="top-right"
-        autoClose={1000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-        transition={Bounce}
-        /> 
         </main>
         
     );
