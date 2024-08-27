@@ -35,9 +35,9 @@ O processo de cadastro foi dividido em etapas, utilizando o hook personalizado `
 - **Navegação fluida** entre as etapas do cadastro.
 
 #### Screenshot da Página de Cadastro
-![Cadastro Page Step 1 : Nome](frontend\public\registerUiName.png)
-![Cadastro Page Step 2 : Email](frontend\public\registerUiEmail.png)
-![Cadastro Page Step 3 : Senha](frontend\public\registerUiSenha.png)
+![Cadastro Page Step 1 : Nome](./frontend/public/registerUiName.png)
+![Cadastro Page Step 2 : Email](./frontend/public/registerUiEmail.png)
+![Cadastro Page Step 3 : Senha](./frontend/public/registerUiSenha.png)
 
 ## Próximos Passos
 
