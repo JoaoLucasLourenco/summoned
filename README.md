@@ -24,7 +24,7 @@ A página de login foi desenvolvida com foco em uma experiência de usuário flu
 - **Feedback visual - Falta implementar** em caso de erro no login.
 
 #### Screenshot da Página de Login
-![Login Page](frontend\public\loginUi.png)
+![Login Page](./frontend/public/loginUi.png)
 
 ### 2. **Página de Cadastro com Paginação**
 
