@@ -1,25 +1,18 @@
 'use client';
 import { useState } from "react";
-
+import { useRouter } from "next/navigation";
 export default function Login(){
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
+    const router = useRouter();
 
     return(
         <main className="
-        flex
-        min-h-screen
-        flex-col 
-        items-center 
-        justify-between 
-        py-24
+        main-singInUp
         ">
             
         <div className="
-        flex
-        flex-col
-        lg:w-1/3
-        w-10/12
+        div-singInUp
         ">
 
             <h1 className="
@@ -38,12 +31,7 @@ export default function Login(){
                 <input type="email"
                 id="email"
                 className="
-                w-full
-                rounded-lg
-                p-2
-                text-text
-                border
-                my-4
+                textInput-singInUp
                 "
                 value={email}
                 placeholder={"Digite seu email aqui"}
@@ -68,12 +56,7 @@ export default function Login(){
                 <input type="password"
                 id="senha"
                 className="
-                w-full
-                rounded-lg
-                p-2
-                text-text
-                border
-                my-4
+                textInput-singInUp
                 "
                 value={senha}
                 placeholder={"Digite sua senha aqui"}
@@ -82,15 +65,7 @@ export default function Login(){
                 
                 <button
                 className="
-                bg-secondary
-                w-full
-                p-2
-                rounded-md
-                text-white
-                text-lg
-                mt-6
-                hover:bg-secondary-light
-                hover:shadow-md
+                button-singIn
                 "
                 >
                     Entrar
@@ -99,13 +74,13 @@ export default function Login(){
             <p
             className="
             text-center
-            my-10
+            mt-10
             "
             >
                 Ainda não tem conta? 
                 
-                <a 
-                href=""
+                <button 
+                onClick={()=>router.push('/register')}
                 className="
                 text-secondary
                 font-bold
@@ -113,7 +88,7 @@ export default function Login(){
                 hover:text-secondary-light
                 "> 
                  Cadastrar-se
-                </a>
+                </button>
             </p>
         </div>
 

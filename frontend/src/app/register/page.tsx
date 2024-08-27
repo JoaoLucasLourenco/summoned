@@ -1,25 +1,68 @@
 'use client';
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+
 
 export default function Login(){
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [nome, setNome] = useState('');
+    const [indice, setIndice] = useState(0);
+    const pagination = [
+        {
+            id : 1,
+            name:'name',
+            nome : 'Nome',
+            placeholder: 'Digite seu nome aqui',
+            tipo:'text',
+            value:nome,
+            setState:setNome
+        },
+        {
+            id : 2,
+            name:'email',
+            nome : 'Email',
+            placeholder: 'Digite seu email aqui',
+            tipo:'email',
+            value:email,
+            setState:setEmail
+        },
+        {
+            id : 3,
+            name:'senha',
+            nome : 'Senha',
+            placeholder: 'Digite sua senha aqui',
+            tipo:'password',
+            value:senha,
+            setState:setSenha
+        },
+    ];
+
+    const proximo = () =>{
+        if(indice<pagination.length-1){;
+            setIndice(indice+1);
+        }
+    };
+
+    const anterior = () =>{
+        if(indice>0){
+            setIndice(indice-1);
+        }
+    };
+    const atualStep = pagination[indice];
+    const router = useRouter();
+
+
+
+
+    
     return(
         <main className="
-        flex
-        min-h-screen
-        flex-col 
-        items-center 
-        justify-between 
-        py-24
+        main-singInUp
         ">
-            
+        
         <div className="
-        flex
-        flex-col
-        lg:w-1/3
-        w-10/12
+        div-singInUp
         ">
 
             <h1 className="
@@ -27,47 +70,51 @@ export default function Login(){
             text-center
             text-xl
             ">
-                Cadastro {nome}
+                Cadastro
             </h1>
             
             <form action="" className="
 
             ">
-                <label htmlFor="name">Nome: </label>
-
-                <input type="text"
-                id="name"
+                
+                
+                <label htmlFor={atualStep.name}>{atualStep.nome}: </label>
+                <input
                 className="
-                w-full
-                rounded-lg
-                p-2
-                text-text
-                border
-                my-4
+                textInput-singInUp
                 "
-                value={nome}
-                placeholder={"Digite seu nome aqui"}
-                onChange={(e)=>setNome(e.target.value)}
+                type={atualStep.tipo}
+                id={atualStep.name}
+                value={atualStep.value}
+                placeholder={atualStep.placeholder}
+                onChange={(e)=>atualStep.setState(e.target.value)}
                 />
 
-
-
+                {
+                    indice?
+                    <button
+                    type="button"
+                    className="
+                    button-singUp-back
+                    "
+                    onClick={()=>{anterior();}}
+                    >
+                        Voltar  
+                    </button>:
+                    <>  </>
+                }
+                
                 
                 <button
+                type="button"
                 className="
-                bg-secondary
-                w-full
-                p-2
-                rounded-md
-                text-white
-                text-lg
-                mt-6
-                hover:bg-secondary-light
-                hover:shadow-md
+                button-singUp-next
                 "
+                onClick={()=>{proximo();}}
                 >
-                    Próximo
+                    Avançar
                 </button>
+
             </form>
             <p
             className="
@@ -75,21 +122,20 @@ export default function Login(){
             my-10
             "
             >
-                Já tem tem conta? 
-                
-                <a 
-                href=""
+                Já tem tem conta?
+                <button 
+                onClick={()=>router.push('/login')}
                 className="
                 text-secondary
                 font-bold
                 mx-1
                 hover:text-secondary-light
                 "> 
-                 Entrar
-                </a>
+                Entrar
+                </button>
             </p>
         </div>
-
         </main>
+        
     );
 }

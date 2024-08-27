@@ -5,8 +5,8 @@
 *{
     transition: 400ms;
     ::selection{
-        background-color: var(--color-secondary);
-        color: var(--color-white);
+        background-color: var(--color-bg-paper);
+        color: var(--color-text);
     }
 }
 :root{
@@ -15,9 +15,66 @@
     --color-warning:#FFEE88;
     --color-success:#04E762;
     --color-default:#00A7E1;
-    --color-bg-paper:#F1F1F1;
-    --color-primary:#4EFFEF;
+    --color-bg-paper:#E1FAF9;
+    --color-primary:#0AD3FF;
     --color-secondary:#F45B69;
     --color-secondary-light:#F9808C;
     --color-white:#FFFFFF; 
+}
+
+.main-singInUp{
+    @apply flex
+    min-h-screen
+    flex-col 
+    items-center 
+    justify-between 
+    py-24
+}
+.div-singInUp{
+    @apply flex
+    flex-col
+    lg:w-1/3
+    w-10/12
+}
+.textInput-singInUp{
+    @apply w-full
+    rounded-lg
+    p-2
+    text-text
+    border
+    my-4
+}
+.button-singIn{
+    @apply bg-secondary
+    w-full  
+    p-2
+    rounded-md
+    text-white
+    text-lg
+    mt-6
+    hover:bg-secondary-light
+    hover:shadow-md
+}
+.button-singUp{
+    @apply md:w-4/12
+    w-5/12
+    p-2
+    rounded-md
+    text-lg
+    mt-6
+}
+.button-singUp-next{
+    @apply button-singUp
+    text-white
+    float-right
+    bg-secondary
+    border
+    border-secondary
+    hover:bg-secondary-light
+    hover:shadow-md
+}
+.button-singUp-back{
+    @apply button-singUp
+    border
+    hover:border-secondary
 }
