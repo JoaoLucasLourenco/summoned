@@ -1,10 +1,10 @@
 'use client';
 import { useState } from "react";
-
+import { useRouter } from "next/navigation";
 export default function Login(){
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-
+    const router = useRouter();
     return(
         <main className="
         flex
@@ -104,8 +104,8 @@ export default function Login(){
             >
                 Ainda não tem conta? 
                 
-                <a 
-                href=""
+                <button 
+                onClick={()=>router.push('/register')}
                 className="
                 text-secondary
                 font-bold
@@ -113,7 +113,7 @@ export default function Login(){
                 hover:text-secondary-light
                 "> 
                  Cadastrar-se
-                </a>
+                </button>
             </p>
         </div>
 
