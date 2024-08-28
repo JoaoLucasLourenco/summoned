@@ -1,8 +1,6 @@
 'use client';
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { usePagination } from "@/hooks/usePagination";
-
 
 export default function Login(){
     
@@ -11,8 +9,6 @@ export default function Login(){
         proximo,
         atualStep,
         anterior} = usePagination();
-
-
 
     
     return(
@@ -31,11 +27,10 @@ export default function Login(){
             ">
                 Cadastro
             </h1>
-            
             <form action="" className="
 
             ">
-                
+
                 
                 <label htmlFor={atualStep.name}>{atualStep.nome}: </label>
                 <input
