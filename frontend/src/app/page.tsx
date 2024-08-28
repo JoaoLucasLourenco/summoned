@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 
 export default function Home() {
   return (
@@ -8,10 +8,11 @@ export default function Home() {
     w-3/6 
     m-auto 
     flex-col 
-    items-center 
-    justify-between 
-    p-24 bg-secondary">
+    items-center  
+    p-24">
       Home
+      <a href="/login">login</a>
+      <a href="/register">register</a>
     </main>
   );
 }
