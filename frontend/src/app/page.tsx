@@ -11,8 +11,6 @@ export default function Home() {
     items-center  
     p-24">
       Home
-      <a href="/login">login</a>
-      <a href="/register">register</a>
     </main>
   );
 }

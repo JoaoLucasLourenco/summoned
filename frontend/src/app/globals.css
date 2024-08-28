@@ -3,11 +3,12 @@
 @tailwind utilities;
 
 *{
-    transition: 400ms;
+    transition: 500ms;
     ::selection{
         background-color: var(--color-bg-paper);
         color: var(--color-text);
     }
+    color: var(--color-text);
 }
 :root{
     --color-text:#160C28;
@@ -16,10 +17,11 @@
     --color-success:#04E762;
     --color-default:#00A7E1;
     --color-bg-paper:#E1FAF9;
-    --color-primary:#0AD3FF;
+    --color-primary:#FBFBF2;
+    --color-primary-contrast: #F5CDA7;
     --color-secondary:#F45B69;
     --color-secondary-light:#F9808C;
-    --color-white:#FFFFFF; 
+    --color-white:#FFFFFF;  
 }
 
 .main-singInUp{
