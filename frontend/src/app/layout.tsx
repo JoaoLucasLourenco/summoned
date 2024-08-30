@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
+import { MedievalSharp } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const medievalSharp = MedievalSharp({ weight: "400" , subsets:["latin"]});
+const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Summoned",

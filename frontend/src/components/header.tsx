@@ -2,8 +2,11 @@
 
 import { useNavigation } from "@/hooks/useNavigation";
 import { usePathname } from "next/navigation";
+import { MedievalSharp } from "next/font/google";
 
+const medievalSharp = MedievalSharp({ weight: "400" , subsets:["latin"]});
 export default function Header(){
+    
     const links = useNavigation();
     const currentPath = usePathname();
     return(
@@ -19,14 +22,10 @@ export default function Header(){
                     items-center
                     ">
                         <a href="/"
-                        className="
-                        sm:px-10
-                        px-6
-                        py-4
-                        m-0
-                        "
+                        className={"sm:px-10 px-6 py-4 m-0 "+medievalSharp.className}
                         >
-                            Home
+                        SUMMODED
+      
                         </a>
                         <ul className="
                         flex
