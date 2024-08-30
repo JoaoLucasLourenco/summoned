@@ -1,13 +1,16 @@
+'use client';
+
 import { useNavigation } from "@/hooks/useNavigation";
+import { usePathname } from "next/navigation";
 
 export default function Header(){
     const links = useNavigation();
+    const currentPath = usePathname();
     return(
         <>
             <header
             className="
             p-4
-            bg-secondary
             w-full
             "
             >
@@ -17,9 +20,9 @@ export default function Header(){
                     ">
                         <a href="/"
                         className="
-                        px-10
+                        sm:px-10
+                        px-6
                         py-4
-                        bg-paper
                         m-0
                         "
                         >
@@ -27,7 +30,7 @@ export default function Header(){
                         </a>
                         <ul className="
                         flex
-                        gap-6
+                        gap-3
                         w-full
                         justify-end
                         ">
@@ -35,14 +38,14 @@ export default function Header(){
                                 links.map((link)=>(
                                     <li key={link.id}
                                     className={
-                                        link.id===1?'hidden sm:block float-right':'float-right block'
+                                        'float-right'
                                     }
                                     >
                                         <a href={link.route}
+                                        data-active={currentPath !== '/'}
                                         className={
-                                            link.id===2?'px-6 py-4 rounded-full bg-primary hover:bg-primary-contrast'
-                                            :'px-6 py-4 rounded-full text-white border border-secondary'+
-                                            ' hover:border-primary'
+                                            'data-[active=true]:hidden '+
+                                            'rounded-full py-4 px-10 border border-secondary hover:bg-secondary hover:text-white'
                                         }
                                         >{link.name}</a>
                                     </li>
