@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import { usePagination } from "@/hooks/usePagination";
 
-export default function Login(){
+export default function Register(){
     
     const router = useRouter();
     const {indice,
