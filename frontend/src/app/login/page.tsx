@@ -5,7 +5,6 @@ export default function Login(){
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const router = useRouter();
-
     return(
         <main className="
         main-singInUp
