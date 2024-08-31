@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import { usePagination } from "@/hooks/usePagination";
 
-export default function Login(){
+export default function Register(){
     
     const router = useRouter();
     const {indice,
@@ -10,7 +10,9 @@ export default function Login(){
         atualStep,
         anterior} = usePagination();
 
-    
+    function handleSubmit(){
+
+    }
     return(
         <main className="
         main-singInUp
@@ -27,7 +29,7 @@ export default function Login(){
             ">
                 Cadastro
             </h1>
-            <form action="" className="
+            <form action={handleSubmit} className="
 
             ">
 
@@ -60,13 +62,13 @@ export default function Login(){
                 
                 
                 <button
-                type="button"
+                type={atualStep.nome=='Confirmar senha'?"button":'submit'}
                 className="
                 button-singUp-next
                 "
-                onClick={()=>{proximo();}}
+                onClick={()=>{atualStep.nome!=='Confirmar senha'?proximo():handleSubmit;}}
                 >
-                    Avançar
+                    {atualStep.nome!=='Confirmar senha'?'Avançar':'Cadastrar'}
                 </button>
 
             </form>
