@@ -34,6 +34,15 @@ export function usePagination () : any {
             value:senha,
             setState:setSenha
         },
+        {
+            id : 4,
+            name:'senha',
+            nome : 'Confirmar senha',
+            placeholder: 'Confirme sua senha',
+            tipo:'password',
+            value:senha,
+            setState:setSenha
+        }
     ];
 
     const proximo = () =>{
