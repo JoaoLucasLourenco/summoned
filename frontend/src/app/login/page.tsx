@@ -1,7 +1,10 @@
 'use client';
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useForceUpdate } from "framer-motion";
+import { useForm } from "react-hook-form";
 export default function Login(){
+    const {register} = useForm();
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const router = useRouter();
@@ -32,6 +35,7 @@ export default function Login(){
                 className="
                 textInput-singInUp
                 "
+                {...register(email)}
                 value={email}
                 placeholder={"Digite seu email aqui"}
                 onChange={(e)=>setEmail(e.target.value)}
