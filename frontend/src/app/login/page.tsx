@@ -35,7 +35,6 @@ export default function Login(){
                 className="
                 textInput-singInUp
                 "
-                {...register(email)}
                 value={email}
                 placeholder={"Digite seu email aqui"}
                 onChange={(e)=>setEmail(e.target.value)}
