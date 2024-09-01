@@ -78,8 +78,8 @@ export default function Login(){
             >
                 Ainda não tem conta? 
                 
-                <button 
-                onClick={()=>router.push('/register')}
+                <a 
+                href={'/register'}
                 className="
                 text-secondary
                 font-bold
@@ -87,7 +87,7 @@ export default function Login(){
                 hover:text-secondary-light
                 "> 
                  Cadastrar-se
-                </button>
+                </a>
             </p>
         </div>
 
