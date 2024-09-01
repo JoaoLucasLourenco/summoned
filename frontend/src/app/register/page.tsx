@@ -1,16 +1,17 @@
 'use client';
 import { useRouter } from "next/navigation";
 import { usePagination } from "@/hooks/usePagination";
+import { useForm } from "react-hook-form";
 
 export default function Register(){
-    
+    const {register, handleSubmit} = useForm();
     const router = useRouter();
     const {indice,
         proximo,
         atualStep,
         anterior} = usePagination();
 
-    function handleSubmit(){
+    function handleSingup(data:any):any{
 
     }
     return(
@@ -29,7 +30,7 @@ export default function Register(){
             ">
                 Cadastro
             </h1>
-            <form action={handleSubmit} className="
+            <form action='' onSubmit={handleSingup(handleSubmit)} className="
 
             ">
 
@@ -43,6 +44,7 @@ export default function Register(){
                 id={atualStep.name}
                 value={atualStep.value}
                 placeholder={atualStep.placeholder}
+                {...register(atualStep.name)}
                 onChange={(e)=>atualStep.setState(e.target.value)}
                 />
 
@@ -62,11 +64,11 @@ export default function Register(){
                 
                 
                 <button
-                type={atualStep.nome=='Confirmar senha'?"button":'submit'}
+                type={atualStep.nome==='Confirmar senha'?"button":'submit'}
                 className="
                 button-singUp-next
                 "
-                onClick={()=>{atualStep.nome!=='Confirmar senha'?proximo():handleSubmit;}}
+                onClick={()=>{proximo();}}
                 >
                     {atualStep.nome!=='Confirmar senha'?'Avançar':'Cadastrar'}
                 </button>
@@ -79,8 +81,8 @@ export default function Register(){
             "
             >
                 Já tem tem conta?
-                <button 
-                onClick={()=>router.push('/login')}
+                <a 
+                href={'/login'}
                 className="
                 text-secondary
                 font-bold
@@ -88,7 +90,7 @@ export default function Register(){
                 hover:text-secondary-light
                 "> 
                 Entrar
-                </button>
+                </a>
             </p>
         </div>
         </main>
