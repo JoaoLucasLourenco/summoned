@@ -30,7 +30,7 @@ export default function Register(){
             ">
                 Cadastro
             </h1>
-            <form action='' onSubmit={handleSingup(handleSubmit)} className="
+            <form action=''  className="
 
             ">
 
@@ -44,7 +44,6 @@ export default function Register(){
                 id={atualStep.name}
                 value={atualStep.value}
                 placeholder={atualStep.placeholder}
-                {...register(atualStep.name)}
                 onChange={(e)=>atualStep.setState(e.target.value)}
                 />
 
@@ -64,13 +63,13 @@ export default function Register(){
                 
                 
                 <button
-                type={atualStep.nome==='Confirmar senha'?"button":'submit'}
+                type={atualStep.nome==='Nome'?"submit":'button'}
                 className="
                 button-singUp-next
                 "
                 onClick={()=>{proximo();}}
                 >
-                    {atualStep.nome!=='Confirmar senha'?'Avançar':'Cadastrar'}
+                    {atualStep.nome!=='Confirmar senha'?'Avançar':'Criar conta'}
                 </button>
 
             </form>

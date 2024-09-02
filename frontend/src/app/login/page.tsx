@@ -22,7 +22,7 @@ export default function Login(){
             text-center
             text-xl
             ">
-                Login {email} {senha}
+                Login
             </h1>
             
             <form action="" className="
@@ -35,7 +35,6 @@ export default function Login(){
                 className="
                 textInput-singInUp
                 "
-                {...register(email)}
                 value={email}
                 placeholder={"Digite seu email aqui"}
                 onChange={(e)=>setEmail(e.target.value)}

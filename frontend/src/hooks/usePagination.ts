@@ -4,6 +4,7 @@ export function usePagination () : any {
     
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
+    const [confirmaSenha, setConfirmaSenha] = useState('');
     const [nome, setNome] = useState('');
     const [indice, setIndice] = useState(0);
     const pagination = [
@@ -36,12 +37,12 @@ export function usePagination () : any {
         },
         {
             id : 4,
-            name:'senha',
+            name:'confirmar senha',
             nome : 'Confirmar senha',
             placeholder: 'Confirme sua senha',
             tipo:'password',
-            value:senha,
-            setState:setSenha
+            value:confirmaSenha,
+            setState:setConfirmaSenha
         }
     ];
 
