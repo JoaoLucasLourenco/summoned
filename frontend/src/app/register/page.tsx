@@ -63,13 +63,13 @@ export default function Register(){
                 
                 
                 <button
-                type={atualStep.nome!=='Confirmar senha'?"button":'submit'}
+                type={atualStep.nome==='Nome'?"submit":'button'}
                 className="
                 button-singUp-next
                 "
                 onClick={()=>{proximo();}}
                 >
-                    {atualStep.nome!=='Confirmar senha'?'Avançar':'Cadastrar'}
+                    {atualStep.nome!=='Confirmar senha'?'Avançar':'Criar conta'}
                 </button>
 
             </form>
