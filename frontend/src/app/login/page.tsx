@@ -22,7 +22,7 @@ export default function Login(){
             text-center
             text-xl
             ">
-                Login {email} {senha}
+                Login
             </h1>
             
             <form action="" className="
