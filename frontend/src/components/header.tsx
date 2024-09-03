@@ -46,6 +46,7 @@ export default function Header(){
                                             'data-[hidden=true]:hidden data-[active=true]:border-b-secondary'+
                                             ' rounded py-4 px-10 hover:bg-secondary '
                                         }
+                                        
                                         >
                                             {link.name}
                                         </a>
