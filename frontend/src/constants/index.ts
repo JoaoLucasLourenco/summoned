@@ -6,7 +6,7 @@ const homeTexts = [
     }
 ];
 
-
+const loggedIn = false;
 export {
-    homeTexts
+    homeTexts, loggedIn
 };

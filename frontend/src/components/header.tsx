@@ -14,45 +14,61 @@ export default function Header(){
             <header
             className="
             p-4
-            w-full
             "
             >
                     <nav className="
+                    text-sm
                     flex
                     items-center
                     ">
                         <a href="/"
-                        className={"sm:px-10 px-6 py-4 m-0 "+medievalSharp.className}
+                        className={"sm:px-10 px-4 py-4 m-0 "+medievalSharp.className}
                         >
                         SUMMODED
       
                         </a>
-                        <ul className="
+                        <ul
+                        className="
                         flex
-                        gap-3
+                        justify-center
                         w-full
-                        justify-end
-                        ">
+                        gap-4
+                        m-auto
+                        "
+                        >
                             {
                                 links.map((link)=>(
-                                    <li key={link.id}
-                                    className={
-                                        'float-right'
-                                    }
-                                    >
+                                    <li key={link.id}>
                                         <a href={link.route}
-                                        data-active={currentPath !== '/'}
+                                        data-hidden={currentPath!=='/dashboard'}
+                                        data-active={currentPath==link.route}
                                         className={
-                                            'data-[active=true]:hidden '+
-                                            'rounded-full py-4 px-10 border border-secondary hover:bg-secondary hover:text-white'
+                                            'data-[hidden=true]:hidden data-[active=true]:border-b-secondary'+
+                                            ' rounded py-4 px-10 hover:bg-secondary '
                                         }
-                                        >{link.name}</a>
+                                        
+                                        >
+                                            {link.name}
+                                        </a>
                                     </li>
-                                ))  
+                                ))
                             }
-                            
-                            
                         </ul>
+                        <div
+                        className="
+                        flex
+                        justify-end
+                        "
+                        >
+                            <a href={'/login'}
+                                    data-active={currentPath !== '/'}
+                                    className={
+                                        'data-[active=true]:hidden '+
+                                        'rounded-full py-4 px-10 border border-secondary hover:bg-secondary hover:text-white'
+                                    }
+                            >Entrar</a>
+                        </div>
+                        
                     </nav>
                 </header>
         </>
