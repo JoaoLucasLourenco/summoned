@@ -6,9 +6,11 @@ export default function Dashboard(){
     
     return(
         <>
-        {
-            loggedIn?<h1>Dashboard</h1>:redirect('/login')
-        }
+        <h1
+        className="p-24 text-center"
+        >
+            Dashboard
+        </h1>
         </>
         
     );
