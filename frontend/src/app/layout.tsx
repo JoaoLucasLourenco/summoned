@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Header from "@/components/header";
+import { MedievalSharp } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+const medievalSharp = MedievalSharp({ weight: "400" , subsets:["latin"]});
+const inter = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Summoned",
@@ -16,7 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Header/>
+        {children}</body>
+        <Analytics/>
     </html>
   );
 }

@@ -2,7 +2,7 @@
  
 ---
 
-# RPG Frontend Training App
+# RPG Training App
 
 Este é um projeto focado no desenvolvimento de habilidades frontend utilizando Next.js, voltado para jogadores de RPG. O objetivo é criar uma aplicação web moderna e interativa que ofereça uma experiência envolvente para os usuários.
 
@@ -33,11 +33,18 @@ O processo de cadastro foi dividido em etapas, utilizando o hook personalizado `
 - **Multistep Form**: O formulário de cadastro é dividido em etapas, tornando o processo mais organizado.
 - **Validação de formulário** em cada etapa, garantindo que os dados sejam preenchidos corretamente antes de avançar para a próxima etapa e reduzindo o atrito do usuário.
 - **Navegação fluida** entre as etapas do cadastro.
+- **Home page** antes de criar a conta ou fazer login.
 
 #### Screenshot da Página de Cadastro
 ![Cadastro Page Step 1 : Nome](./frontend/public/registerUiName.png)
 ![Cadastro Page Step 2 : Email](./frontend/public/registerUiEmail.png)
 ![Cadastro Page Step 3 : Senha](./frontend/public/registerUiSenha.png)
+
+### 2. **Página home**
+
+Página inicial antes do cadastro e/ou login, que convida o usuário para criar sua conta no site.
+![Página home: Desktop](./frontend/public/homeDesktop.png)
+![Página home: Desktop](./frontend/public/homeMobile.png)
 
 ## Próximos Passos
 

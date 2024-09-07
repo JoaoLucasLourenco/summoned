@@ -1,20 +1,19 @@
 'use client';
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { usePagination } from "@/hooks/usePagination";
+import { useForm } from "react-hook-form";
 
-
-export default function Login(){
-    
+export default function Register(){
+    const {register, handleSubmit} = useForm();
     const router = useRouter();
     const {indice,
         proximo,
         atualStep,
         anterior} = usePagination();
 
+    function handleSingup(data:any):any{
 
-
-    
+    }
     return(
         <main className="
         main-singInUp
@@ -31,11 +30,10 @@ export default function Login(){
             ">
                 Cadastro
             </h1>
-            
-            <form action="" className="
+            <form action=''  className="
 
             ">
-                
+
                 
                 <label htmlFor={atualStep.name}>{atualStep.nome}: </label>
                 <input
@@ -65,13 +63,13 @@ export default function Login(){
                 
                 
                 <button
-                type="button"
+                type={atualStep.nome==='Nome'?"submit":'button'}
                 className="
                 button-singUp-next
                 "
                 onClick={()=>{proximo();}}
                 >
-                    Avançar
+                    {atualStep.nome!=='Confirmar senha'?'Avançar':'Criar conta'}
                 </button>
 
             </form>
@@ -82,8 +80,8 @@ export default function Login(){
             "
             >
                 Já tem tem conta?
-                <button 
-                onClick={()=>router.push('/login')}
+                <a 
+                href={'/login'}
                 className="
                 text-secondary
                 font-bold
@@ -91,7 +89,7 @@ export default function Login(){
                 hover:text-secondary-light
                 "> 
                 Entrar
-                </button>
+                </a>
             </p>
         </div>
         </main>
