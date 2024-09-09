@@ -1,11 +1,12 @@
 'use client';
 import * as yup from 'yup';
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import {yupResolver} from '@hookform/resolvers/yup';
 import { userValidatorSchema } from '@/types/validation/validation';
+import TextField from '@mui/material/TextField';
 
 export default function SingUpForm(){
-    const {register, handleSubmit, formState:{errors}} = useForm({
+    const {control, register, handleSubmit, formState:{errors}} = useForm({
         resolver: yupResolver(userValidatorSchema)
     });
     
@@ -31,23 +32,21 @@ export default function SingUpForm(){
             <form onSubmit={handleSubmit(submit)}  className="
 
             ">
-
-                
-
                 <label htmlFor={'email'}>Email: </label>
                 <input
                 className="
                 textInput-singInUp
                 "
-                type='email'
+                type='text'
                 id='email'
                 placeholder='Digite seu email aqui'
                 {...register('email')}
-                required
                 />
-                <p className='text-error'>
+                <div className='error-div'>
                     {errors.email?.message}
-                </p>
+                </div>
+
+
                 <label htmlFor={'senha'}>Senha: </label>
                 <input
                 className="
@@ -57,11 +56,12 @@ export default function SingUpForm(){
                 id='senha'
                 placeholder='Digite sua senha aqui'
                 {...register('senha')}
-                required
                 />
-                <p className='text-error'>
+                <div className='error-div'>
                     {errors.senha?.message}
-                </p>
+                </div>
+
+
                 <label htmlFor={'confirma-senha'}>Confirmar senha: </label>
                 <input
                 className="
@@ -72,11 +72,12 @@ export default function SingUpForm(){
                 placeholder='Repita sua senha aqui'
                 
                 {...register('confirmaSenha')}
-                required
                 />
-                <p className='text-error'>
+                <div className='error-div'>
                     {errors.confirmaSenha?.message}
-                </p>
+                </div>
+
+
                 <button
                 type='submit'
                 className="

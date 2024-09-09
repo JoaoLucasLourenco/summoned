@@ -43,7 +43,7 @@
     p-2
     text-text
     border
-    my-4
+    mt-4
 }
 .button-singIn{
     @apply bg-secondary
@@ -78,4 +78,10 @@
     @apply button-singUp
     border
     hover:border-secondary
+}
+.error-div{
+    @apply text-error
+    mb-2
+    text-center
+    p-1
 }
