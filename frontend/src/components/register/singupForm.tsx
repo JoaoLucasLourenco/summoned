@@ -104,6 +104,7 @@ export default function SingUpForm(){
                 "> 
                 Entrar
                 </a>
+                
             </p>
         </div>
         </main>
