@@ -1,3 +1,4 @@
+'use client';
 import { useForm } from "react-hook-form";
 import {yupResolver} from '@hookform/resolvers/yup';
 import { userValidatorSchema } from '@/types/validation/validation';
@@ -103,6 +104,7 @@ export default function SingUpForm(){
                 "> 
                 Entrar
                 </a>
+                
             </p>
         </div>
         </main>
