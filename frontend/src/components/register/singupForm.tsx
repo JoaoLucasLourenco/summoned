@@ -1,10 +1,13 @@
 'use client';
-import { useRef, useState } from "react";
+import * as yup from 'yup';
+import { useForm } from "react-hook-form";
 
 export default function SingUpForm(){
-    const email = useRef<HTMLInputElement>(null);
-    const senha = useRef<HTMLInputElement>(null);
-    const confirmaSenha = useRef<HTMLInputElement>(null);
+    const {register, handleSubmit} = useForm();
+    
+    function submit(data:object){
+        console.log(data);
+    }
     return(
         <main className="
         main-singInUp
@@ -21,7 +24,7 @@ export default function SingUpForm(){
             ">
                 Cadastro
             </h1>
-            <form action=''  className="
+            <form onSubmit={handleSubmit(submit)}  className="
 
             ">
 
@@ -32,10 +35,11 @@ export default function SingUpForm(){
                 className="
                 textInput-singInUp
                 "
-                ref={email}
                 type='email'
                 id='email'
                 placeholder='Digite seu email aqui'
+                {...register('email')}
+                required
                 />
 
                 <label htmlFor={'senha'}>Senha: </label>
@@ -43,10 +47,11 @@ export default function SingUpForm(){
                 className="
                 textInput-singInUp
                 "
-                ref={senha}
                 type='password'
                 id='senha'
                 placeholder='Digite sua senha aqui'
+                {...register('senha')}
+                required
                 />
                 
                 <label htmlFor={'confirma-senha'}>Confirmar senha: </label>
@@ -54,10 +59,12 @@ export default function SingUpForm(){
                 className="
                 textInput-singInUp
                 "
-                ref={senha}
                 type='password'
                 id='confirma-senha'
                 placeholder='Repita sua senha aqui'
+                
+                {...register('confirma-senha')}
+                required
                 />
 
                 <button
