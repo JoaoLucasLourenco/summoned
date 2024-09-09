@@ -1,9 +1,13 @@
 'use client';
 import * as yup from 'yup';
 import { useForm } from "react-hook-form";
+import {yupResolver} from '@hookform/resolvers/yup';
+import { userValidatorSchema } from '@/types/validation/validation';
 
 export default function SingUpForm(){
-    const {register, handleSubmit} = useForm();
+    const {register, handleSubmit, formState:{errors}} = useForm({
+        resolver: yupResolver(userValidatorSchema)
+    });
     
     function submit(data:object){
         console.log(data);
@@ -41,7 +45,9 @@ export default function SingUpForm(){
                 {...register('email')}
                 required
                 />
-
+                <p className='text-error'>
+                    {errors.email?.message}
+                </p>
                 <label htmlFor={'senha'}>Senha: </label>
                 <input
                 className="
@@ -53,7 +59,9 @@ export default function SingUpForm(){
                 {...register('senha')}
                 required
                 />
-                
+                <p className='text-error'>
+                    {errors.senha?.message}
+                </p>
                 <label htmlFor={'confirma-senha'}>Confirmar senha: </label>
                 <input
                 className="
@@ -63,10 +71,12 @@ export default function SingUpForm(){
                 id='confirma-senha'
                 placeholder='Repita sua senha aqui'
                 
-                {...register('confirma-senha')}
+                {...register('confirmaSenha')}
                 required
                 />
-
+                <p className='text-error'>
+                    {errors.confirmaSenha?.message}
+                </p>
                 <button
                 type='submit'
                 className="
