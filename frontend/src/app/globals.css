@@ -30,7 +30,6 @@
     flex-col 
     items-center 
     justify-between 
-    py-24
 }
 .div-singInUp{
     @apply flex
@@ -44,39 +43,33 @@
     p-2
     text-text
     border
-    my-4
+    mt-4
+}
+.button-base{
+    @apply w-full  
+    p-2
+    rounded-md
+    text-lg
 }
 .button-singIn{
     @apply bg-secondary
-    w-full  
-    p-2
-    rounded-md
+    button-base
     text-white
-    text-lg
     mt-6
     hover:bg-secondary-light
     hover:shadow-md
 }
-.button-singUp{
-    @apply md:w-4/12
-    w-5/12
-    p-2
-    rounded-md
-    text-lg
-    mt-6
-}
-.button-singUp-next{
-    @apply button-singUp
-    text-white
-    float-right
-    bg-secondary
-    border
-    border-secondary
-    hover:bg-secondary-light
-    hover:shadow-md
-}
-.button-singUp-back{
-    @apply button-singUp
+.button-reset{
+    @apply
+    button-base
+    mt-3
     border
     hover:border-secondary
+}
+
+.error-div{
+    @apply text-error
+    mb-2
+    text-center
+    p-1
 }
