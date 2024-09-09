@@ -1,12 +1,10 @@
-'use client';
-import * as yup from 'yup';
-import { Controller, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import {yupResolver} from '@hookform/resolvers/yup';
 import { userValidatorSchema } from '@/types/validation/validation';
-import TextField from '@mui/material/TextField';
+import InputSingUpInForm from './inputSingUp';
 
 export default function SingUpForm(){
-    const {control, register, handleSubmit, formState:{errors}} = useForm({
+    const {reset, register, handleSubmit, formState:{errors}} = useForm({
         resolver: yupResolver(userValidatorSchema)
     });
     
@@ -32,46 +30,36 @@ export default function SingUpForm(){
             <form onSubmit={handleSubmit(submit)}  className="
 
             ">
-                <label htmlFor={'email'}>Email: </label>
-                <input
-                className="
-                textInput-singInUp
-                "
+                <InputSingUpInForm
+                label='Email'
+                name='email'
+                placeholder='seu@email.aqui'
                 type='text'
-                id='email'
-                placeholder='Digite seu email aqui'
-                {...register('email')}
+                register={register}
                 />
-                <div className='error-div'>
+                <div className="error-div">
                     {errors.email?.message}
                 </div>
+                
 
-
-                <label htmlFor={'senha'}>Senha: </label>
-                <input
-                className="
-                textInput-singInUp
-                "
-                type='password'
-                id='senha'
+                <InputSingUpInForm
+                label='Senha'
+                name='senha'
                 placeholder='Digite sua senha aqui'
-                {...register('senha')}
+                type='password'
+                register={register}
                 />
                 <div className='error-div'>
                     {errors.senha?.message}
                 </div>
 
 
-                <label htmlFor={'confirma-senha'}>Confirmar senha: </label>
-                <input
-                className="
-                textInput-singInUp
-                "
-                type='password'
-                id='confirma-senha'
+                <InputSingUpInForm
+                label='Confirme sua senha'
+                name='confirmaSenha'
                 placeholder='Repita sua senha aqui'
-                
-                {...register('confirmaSenha')}
+                type='password'
+                register={register}
                 />
                 <div className='error-div'>
                     {errors.confirmaSenha?.message}
@@ -86,6 +74,16 @@ export default function SingUpForm(){
                 >
                     Criar conta
                 </button>
+                <button
+                type='button'
+                onClick={()=>reset()}
+                className="
+                button-reset
+                "
+                >
+                    Limpar campos
+                </button>
+                
 
             </form>
             <p
