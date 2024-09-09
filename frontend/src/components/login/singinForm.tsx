@@ -1,13 +1,10 @@
 'use client';
 import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { useForceUpdate } from "framer-motion";
 import { useForm } from "react-hook-form";
 export default function SingInForm(){
     const {register} = useForm();
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-    const router = useRouter();
     return(
         <main className="
         main-singInUp

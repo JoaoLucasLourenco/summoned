@@ -1,19 +1,10 @@
 'use client';
-import { useRouter } from "next/navigation";
-import { usePagination } from "@/hooks/usePagination";
-import { useForm } from "react-hook-form";
+import { useRef, useState } from "react";
 
 export default function SingUpForm(){
-    const {register, handleSubmit} = useForm();
-    const router = useRouter();
-    const {indice,
-        proximo,
-        atualStep,
-        anterior} = usePagination();
-
-    function handleSingup(data:any):any{
-
-    }
+    const email = useRef<HTMLInputElement>(null);
+    const senha = useRef<HTMLInputElement>(null);
+    const confirmaSenha = useRef<HTMLInputElement>(null);
     return(
         <main className="
         main-singInUp
@@ -35,41 +26,47 @@ export default function SingUpForm(){
             ">
 
                 
-                <label htmlFor={atualStep.name}>{atualStep.nome}: </label>
+
+                <label htmlFor={'email'}>Email: </label>
                 <input
                 className="
                 textInput-singInUp
                 "
-                type={atualStep.tipo}
-                id={atualStep.name}
-                value={atualStep.value}
-                placeholder={atualStep.placeholder}
-                onChange={(e)=>atualStep.setState(e.target.value)}
+                ref={email}
+                type='email'
+                id='email'
+                placeholder='Digite seu email aqui'
                 />
 
-                {
-                    indice?
-                    <button
-                    type="button"
-                    className="
-                    button-singUp-back
-                    "
-                    onClick={()=>{anterior();}}
-                    >
-                        Voltar  
-                    </button>:
-                    <>  </>
-                }
-                
-                
-                <button
-                type='button'
+                <label htmlFor={'senha'}>Senha: </label>
+                <input
                 className="
-                button-singUp-next
+                textInput-singInUp
                 "
-                onClick={()=>{proximo();}}
+                ref={senha}
+                type='password'
+                id='senha'
+                placeholder='Digite sua senha aqui'
+                />
+                
+                <label htmlFor={'confirma-senha'}>Confirmar senha: </label>
+                <input
+                className="
+                textInput-singInUp
+                "
+                ref={senha}
+                type='password'
+                id='confirma-senha'
+                placeholder='Repita sua senha aqui'
+                />
+
+                <button
+                type='submit'
+                className="
+                button-singIn
+                "
                 >
-                    {atualStep.nome!=='Confirmar senha'?'Avançar':'Criar conta'}
+                    Criar conta
                 </button>
 
             </form>

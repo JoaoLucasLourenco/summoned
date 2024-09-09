@@ -30,7 +30,6 @@
     flex-col 
     items-center 
     justify-between 
-    py-24
 }
 .div-singInUp{
     @apply flex
