@@ -25,6 +25,7 @@ const InputSingUpInForm: React.FC<InputSingUpInFormProps> = ({
         placeholder={placeholder}
         {...register(name)}
       />
+
     </>
   );
 };
