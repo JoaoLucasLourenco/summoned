@@ -1,11 +1,13 @@
+import { ReactNode } from "react";
 import { UseFormRegister } from "react-hook-form";
 
-interface InputSingUpInFormProps {
+export interface InputSingUpInFormProps {
   label: string;
   name: string;
   type: string;
   placeholder: string;
   register: UseFormRegister<any>;
+  icon: ReactNode;
 }
 
 const InputSingUpInForm: React.FC<InputSingUpInFormProps> = ({
@@ -13,19 +15,25 @@ const InputSingUpInForm: React.FC<InputSingUpInFormProps> = ({
   name,
   type,
   placeholder,
-  register
+  register,
+  icon
 }) => {
   return (
     <>
       <label htmlFor={name}>{label} </label>
-      <input
-        className="textInput-singInUp"
-        type={type}
-        id={name}
-        placeholder={placeholder}
-        {...register(name)}
-      />
 
+      <div className="relative">
+        <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+          {icon}
+        </div>
+        <input type={type}
+          id={name}
+          className="block w-full p-4 ps-10 text-sm text-text border rounded-lg bg-gray-50"
+          placeholder={placeholder}
+          {...register(name)}
+        />
+
+      </div>
     </>
   );
 };

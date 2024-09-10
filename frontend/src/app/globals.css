@@ -10,6 +10,11 @@
     }
     color: var(--color-text);
 }
+*{
+    @apply focus:ring-1 
+    focus:outline-none 
+    focus:ring-secondary
+}
 :root{
     --color-text:#160C28;
     --color-error:#DD1155;
@@ -23,7 +28,6 @@
     --color-secondary-light:#F9808C;
     --color-white:#FFFFFF;  
 }
-
 .main-singInUp{
     @apply flex
     min-h-screen
