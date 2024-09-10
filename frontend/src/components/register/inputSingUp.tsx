@@ -28,7 +28,7 @@ const InputSingUpInForm: React.FC<InputSingUpInFormProps> = ({
         </div>
         <input type={type}
           id={name}
-          className="block w-full p-4 ps-10 text-sm text-text border rounded-lg bg-gray-50"
+          className="block w-full p-4 ps-10 text-sm text-text border rounded-lg bg-gray-50 focus:ring-1 focus:outline-none focus:ring-secondary"
           placeholder={placeholder}
           {...register(name)}
         />
