@@ -23,7 +23,6 @@
     --color-secondary-light:#F9808C;
     --color-white:#FFFFFF;  
 }
-
 .main-singInUp{
     @apply flex
     min-h-screen
@@ -39,8 +38,10 @@
 }
 .textInput-singInUp{
     @apply w-full
+    sm:rounded-md
     rounded-lg
-    p-2
+    py-2
+    px-5
     text-text
     border
     mt-4
