@@ -2,7 +2,7 @@
 import { useForm, UseFormRegister } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { userValidatorSchema } from '@/types/validation/validation';
-import InputSingUpInForm, { InputSingUpInFormProps } from './inputSingUp';
+import InputSingUpInForm from './inputSingUp';
 
 export default function SingUpForm() {
     const { reset, register, handleSubmit, formState: { errors } } = useForm({
