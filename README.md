@@ -39,7 +39,7 @@ O processo de cadastro foi dividido em etapas, utilizando o hook personalizado `
 ![Cadastro Page Step 2 : Email](./frontend/public/registerUiEmail.png)
 ![Cadastro Page Step 3 : Senha](./frontend/public/registerUiSenha.png)
 
-### 2. **Página home**
+### 3. **Página home**
 
 Página inicial antes do cadastro e/ou login, que convida o usuário para criar sua conta no site.
 ![Página home: Desktop](./frontend/public/homeDesktop.png)
