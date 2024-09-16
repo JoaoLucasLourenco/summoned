@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/header";
 import { MedievalSharp } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import Navbar from "@/components/header";
 const medievalSharp = MedievalSharp({ weight: "400" , subsets:["latin"]});
 const inter = Montserrat({ subsets: ["latin"] });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={inter.className}>
-        <Header/>
+        <Navbar/>
         {children}</body>
         <Analytics/>
     </html>
