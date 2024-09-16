@@ -11,7 +11,6 @@ Este é um projeto focado no desenvolvimento de habilidades frontend utilizando 
 - **Next.js**: Framework React para renderização do lado do servidor e geração de páginas estáticas.
 - **React Hooks**: Para gerenciamento de estados e funcionalidades reutilizáveis.
 - **Tailwind**: Para estilização dos componentes.
-- **usePagination Hook**: Um hook personalizado criado para gerenciar a paginação no fluxo de cadastro.
 
 ## Funcionalidades Implementadas
 
