@@ -20,7 +20,7 @@ export default function Navbar() {
                 <a href="/"
                     className={"sm:px-10 px-4 py-4 m-0 " + medievalSharp.className}
                 >
-                    Summoned
+                    SUMMONED
 
                 </a>
                 <ul
